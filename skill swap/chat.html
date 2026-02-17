@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillSwap Chat</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Chat</h1>
+  <button onclick="goBack()">Back</button>
+</header>
+
+<div class="chat-box" style="width:80%; max-width:600px; margin:20px auto;">
+  <div class="chat-header">
+    <h3 id="chatTitle"></h3>
+    <div>
+      <button onclick="startVoiceCall()">📞</button>
+      <button onclick="startVideoCall()">📹</button>
+    </div>
+  </div>
+
+  <div id="chatMessages" class="chat-messages"></div>
+
+  <div class="chat-input">
+    <input type="text" id="messageInput" placeholder="Type message...">
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</div>
+
+<script src="chat.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SkillSwap</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>SkillSwap</h1>
+  <div class="header-right">
+    <button id="logoutBtn" style="display:none;">Logout</button>
+    <img id="profileIcon" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="Profile" style="display:none;" />
+
+    <!-- Notifications -->
+    <div id="notificationWrapper" style="position:relative; display:inline-block; margin-left:10px; cursor:pointer;">
+      <img id="notificationIcon" src="https://cdn-icons-png.flaticon.com/512/1827/1827343.png" alt="Notifications" style="width:28px; height:28px; display:none;">
+      <span id="notificationCount" style="position:absolute; top:-5px; right:-5px; background:red; color:white; border-radius:50%; padding:2px 6px; font-size:12px; display:none;">0</span>
+
+      <!-- Dropdown -->
+      <div id="notificationDropdown" style="display:none; position:absolute; top:30px; right:0; background:white; border:1px solid #ccc; min-width:220px; z-index:1000; max-height:300px; overflow-y:auto; box-shadow:0 2px 8px rgba(0,0,0,0.2);">
+        <!-- Requests / messages injected here -->
+      </div>
+    </div>
+
+    <button id="themeToggle">🌙</button>
+  </div>
+</header>
+
+<!-- LOGIN / SIGNUP -->
+<section id="authSection" class="form-section">
+  <h2>Login</h2>
+  <form id="loginForm">
+    <input type="text" id="loginUsername" placeholder="Username" required>
+    <input type="password" id="loginPassword" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <button id="showSignup">Sign Up</button></p>
+
+  <h2 style="display:none;" id="signupTitle">Sign Up</h2>
+  <form id="signupForm" style="display:none;">
+    <input type="text" id="signupUsername" placeholder="Username" required>
+    <input type="password" id="signupPassword" placeholder="Password" required>
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="text" id="offer" placeholder="Skill You Offer" required>
+    <input type="text" id="want" placeholder="Skill You Want" required>
+    <input type="text" id="availability" placeholder="Availability" required>
+    <textarea id="bio" placeholder="Short Bio"></textarea>
+    <button type="submit">Create Profile</button>
+  </form>
+</section>
+
+<!-- MARKETPLACE -->
+<section id="marketSection" style="display:none;">
+  <div class="search-section">
+    <input type="text" id="searchInput" placeholder="Search by skill...">
+  </div>
+
+  <section class="marketplace">
+    <h2>Marketplace</h2>
+    <div id="cardContainer" class="card-container"></div>
+  </section>
+</section>
+
+<!-- Profile Edit Modal -->
+<div id="profileModal" class="chat-modal">
+  <div class="chat-box">
+    <div class="chat-header">
+      <h3>Edit Profile</h3>
+      <button onclick="closeProfileModal()">❌</button>
+    </div>
+    <form id="editProfileForm" style="padding: 15px; display:flex; flex-direction:column; gap:10px;">
+      <input type="text" id="editUsername" placeholder="Username" required>
+      <input type="password" id="editPassword" placeholder="Password" required>
+      <input type="text" id="editName" placeholder="Your Name" required>
+      <input type="text" id="editOffer" placeholder="Skill You Offer" required>
+      <input type="text" id="editWant" placeholder="Skill You Want" required>
+      <input type="text" id="editAvailability" placeholder="Availability" required>
+      <textarea id="editBio" placeholder="Short Bio"></textarea>
+      <button type="submit">Save Changes</button>
+    </form>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
